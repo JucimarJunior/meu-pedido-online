@@ -25,7 +25,7 @@ no lugar de "porta" substituir pela porta gerada ao executar o backend local do 
 
 ## Como utilizar o Backend para realizar as requisições?
 
-Todas as orientações de como executar a API, estão no projeto neste link: https://github.com/JucimarJunior/api-order-backend. Você precisa fazer o download do projeto com a API. A API possui os métodos HTTP GET e POST. Os dados no formato são esses:
+Todas as orientações de como executar a API, estão no projeto neste link: https://github.com/JucimarJunior/api-order-backend. Você precisa fazer o download do projeto com a API. A API possui os métodos HTTP GET e POST. Os dados no formato JSON são esses:
 
 ```json
 {
