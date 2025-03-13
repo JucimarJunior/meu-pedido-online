@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9D9D9"
+    tools:context=".ui.AddOrderFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/client_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Nome Cliente"
+            android:background="@drawable/edittext_border"
+            android:layout_marginTop="30dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/product_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:hint="Produto"
+            android:padding="12dp"
+            android:background="@drawable/edittext_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/client_name" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/quantity_product"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:hint="Quantidade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_name" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/total_value"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Preço Total"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quantity_product" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_create_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#C3A134"
+            android:text="Salvar Pedido"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_value" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

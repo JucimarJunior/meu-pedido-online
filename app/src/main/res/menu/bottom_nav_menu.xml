@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"
+        android:checked="true" />
+    <item
+        android:id="@+id/my_orders"
+        android:title="@string/meus_pedidos"
+        android:icon="@drawable/ic_order" />
+    <item
+        android:id="@+id/add_order"
+        android:title="@string/criar_pedidos"
+        android:icon="@drawable/create_order" />
+</menu>
+

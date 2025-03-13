@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ListaPedidos</string>
+    <string name="home">Home</string>
+    <string name="meus_pedidos">Meus Pedidos</string>
+    <string name="criar_pedidos">Criar Pedidos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_title">Fragment Home</string>
+    <string name="my_order_title">Fragment Meus Pedidos</string>
+    <string name="add_order_title">Fragment Criar Pedidos</string>
+    <string name="todo">TODO</string>
+</resources>

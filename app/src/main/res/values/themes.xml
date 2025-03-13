@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ListaPedidos" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimaryDark">#494A36</item>
+        <item name="drawerArrowStyle">@style/DrawerIconStyle</item>
+        <item name="textInputStyle">@style/Widget.App.ExposedDropdownMenu</item>
+
+    </style>
+
+    <style name="Widget.App.ExposedDropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.SmallComponent</item>
+        <item name="hintTextColor">?attr/colorOnSurface</item>
+        <item name="endIconTint">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="MyCustomEditTextStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:padding">8dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="boxStrokeColor">#6200EE</item>
+        <item name="boxBackgroundColor">#FFFFFF</item>
+        <item name="hintTextColor">@color/gray</item>
+    </style>
+
+    <style name="DrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#FFFFFF</item>
+    </style>
+
+    <style name="Theme.ListaPedidos" parent="Base.Theme.ListaPedidos" />
+</resources>
