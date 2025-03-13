@@ -26,13 +26,14 @@ no lugar de "porta" substituir pela porta gerada ao executar o backend local do 
 
 ## Como utilizar o Backend para realizar as requisições?
 
-Você precisa fazer o download do projeto com a API neste link: https://github.com/JucimarJunior/api-order-backend. A API possui os métodos HTTP GET e POST. Os dados no formato são esses:
+Você precisa fazer o download do projeto com a API neste link: https://github.com/JucimarJunior/api-order-backend. A API possui os métodos HTTP GET e POST. Os dados no formato JSON são esses:
 
-`{
+```json
+{
   "name": "string",
   "product": "string",
   "quantity": 0,
   "total": 0
-}`
+}
 
 Todas as instruções de como utilizar a API em .NET Core 9 estão no readme do projeto.
