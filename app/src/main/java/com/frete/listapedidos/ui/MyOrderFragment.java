@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.frete.listapedidos.R;
 import com.frete.listapedidos.databinding.FragmentMyOrderBinding;
 import com.frete.listapedidos.viewmodel.OrderViewModel;
 
@@ -41,16 +40,6 @@ public class MyOrderFragment extends Fragment {
         recyclerView.setAdapter(orderAdapter);
 
         orderViewModel = new ViewModelProvider(this).get(OrderViewModel.class);
-
-        orderViewModel.getIsLoadingLiveData().observe(getViewLifecycleOwner(), isLoading -> {
-            if (isLoading) {
-                binding.progressBar.setVisibility(View.VISIBLE);
-                recyclerView.setVisibility(View.GONE);
-                txtNotifier.setVisibility(View.GONE);
-            } else {
-                binding.progressBar.setVisibility(View.GONE);
-            }
-        });
 
         orderViewModel.getOrdersLiveData().observe(getViewLifecycleOwner(), orders -> {
             if (orders != null && !orders.isEmpty()) {

@@ -59,16 +59,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/field_quantity" />
 
-            <ImageView
-                android:layout_width="21dp"
-                android:layout_height="23dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_edit"
-                android:layout_marginBottom="55dp"
-                app:layout_constraintBottom_toBottomOf="@+id/field_total"
-                app:layout_constraintEnd_toEndOf="@+id/field_quantity"
-                app:layout_constraintTop_toTopOf="@+id/field_product" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

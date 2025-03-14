@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitConfig {
 
-    private static final String BASE_URL = "http://10.0.2.2:XXXX"; // XXXX Colocar a porta Criada na API .NET
+    private static final String BASE_URL = "http://10.0.2.2:5182"; // Colocar a porta Criada na API .NET
 
     private static final Gson gson = new GsonBuilder().create();
 

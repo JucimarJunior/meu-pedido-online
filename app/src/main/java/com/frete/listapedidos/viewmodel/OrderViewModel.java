@@ -19,11 +19,6 @@ public class OrderViewModel extends ViewModel {
     private final MutableLiveData<Boolean> postSuccessLiveData = new MutableLiveData<>();
     private final MutableLiveData<String> errorLiveData = new MutableLiveData<>();
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
-    private final MutableLiveData<Boolean> isLoadingLiveData = new MutableLiveData<>();
-
-    public LiveData<Boolean> getIsLoadingLiveData() {
-        return isLoadingLiveData;
-    }
 
     public OrderViewModel() {
         orderService = RetrofitConfig.getOrderService();
@@ -46,11 +41,6 @@ public class OrderViewModel extends ViewModel {
     }
 
     public void fetchOrders() {
-        if (orderLiveData.getValue() != null && !orderLiveData.getValue().isEmpty()) {
-            return;
-        }
-        isLoadingLiveData.postValue(true);
-        errorLiveData.postValue(null);
         executorService.execute(() -> {
             try {
                 Response<List<Order>> response = orderService.getOrders().execute();
@@ -63,8 +53,6 @@ public class OrderViewModel extends ViewModel {
             } catch (Exception e) {
                 e.printStackTrace();
                 errorLiveData.postValue("Falha na conexão: " + e.getMessage());
-            } finally {
-                isLoadingLiveData.postValue(false);
             }
         });
     }
