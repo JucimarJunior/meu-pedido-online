@@ -38,4 +38,4 @@ Todas as orientações de como executar a API, estão no projeto neste link: htt
 
 ## Demonstração
 
-https://github.com/user-attachments/assets/60fedce4-bf00-46f4-9dee-d5157ee0559f
+https://github.com/user-attachments/assets/eb7f9ccf-2bc8-4471-98a5-a09e1dafa037
