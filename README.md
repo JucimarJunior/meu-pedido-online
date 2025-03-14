@@ -22,7 +22,10 @@ Basta fazer o clone do projeto na branch master. Após ter feito o download do p
 
 no lugar de "porta" substituir pela porta gerada ao executar o backend local do projeto: https://github.com/JucimarJunior/api-order-backend
 
+Observação importante: Caso os testes sejam feitos em um emulador do android, ao utilizar a api-order-backend em .NET, por causa de algumas limitações do android específicas para o emulador, é necessário colocar na `BASE_URL` o IP do mesmo ao invés do localhost diretamente, como no exemplo: `"http://10.0.2.2:5182"`, para que os testes sejam bem sucedidos. Mais orientações no link da própria documentação do android:
+<a href=“http://exemplo.com/](https://developer.android.com/studio/run/emulator-networking?hl=pt-br“>Configurar a rede do Android Emulator</a>
 
+   
 ## Como utilizar o Backend para realizar as requisições?
 
 Todas as orientações de como executar a API, estão no projeto neste link: https://github.com/JucimarJunior/api-order-backend. Você precisa fazer o download do projeto com a API. A API possui os métodos HTTP GET e POST. Os dados no formato JSON são esses:
