@@ -34,3 +34,8 @@ Todas as orientações de como executar a API, estão no projeto neste link: htt
   "quantity": 0,
   "total": 0
 }
+```
+
+## Demonstração
+
+https://github.com/user-attachments/assets/60fedce4-bf00-46f4-9dee-d5157ee0559f
