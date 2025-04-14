@@ -1,5 +1,7 @@
 package com.frete.listapedidos.viewmodel;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -51,7 +53,7 @@ public class OrderViewModel extends ViewModel {
                 }
 
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e("OrderViewModel", "Erro ao buscar dados", e);
                 errorLiveData.postValue("Falha na conexão: " + e.getMessage());
             }
         });
@@ -67,7 +69,7 @@ public class OrderViewModel extends ViewModel {
                     errorLiveData.postValue("Error ao criar pedido: " + response.code());
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e("OrderViewModel", "Erro ao criar dados", e);
                 errorLiveData.postValue("Falha na conexão: " + e.getMessage());
             }
         });

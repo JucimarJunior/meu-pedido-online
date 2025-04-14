@@ -1,7 +1,10 @@
 package com.frete.listapedidos.ui;
 
+import static java.util.Objects.requireNonNull;
+
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 
 import com.frete.listapedidos.databinding.FragmentAddOrderBinding;
 import com.frete.listapedidos.model.Order;
+import com.frete.listapedidos.util.OrderFormValidator;
 import com.frete.listapedidos.viewmodel.OrderViewModel;
 
 public class AddOrderFragment extends Fragment {
@@ -22,7 +26,7 @@ public class AddOrderFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentAddOrderBinding.inflate(inflater, container, false);
         orderViewModel = new ViewModelProvider(this).get(OrderViewModel.class);
 
@@ -51,14 +55,15 @@ public class AddOrderFragment extends Fragment {
     }
 
     private void sendOrder() {
-        String nameClient = binding.clientName.getText().toString().trim();
-        String nameProduct = binding.productName.getText().toString().trim();
-        String quantityInput = binding.quantityProduct.getText().toString().trim();
-        String totalInput = binding.totalValue.getText().toString().trim();
+        String nameClient = requireNonNull(requireNonNull(binding).clientName.getText()).toString();
+        String nameProduct = requireNonNull(binding.productName.getText()).toString();
+        String quantityInput = requireNonNull(binding.quantityProduct.getText()).toString();
+        String totalInput = requireNonNull(binding.totalValue.getText()).toString();
 
-        if(nameClient.isEmpty() || nameProduct.isEmpty() || quantityInput.isEmpty() || totalInput.isEmpty()) {
-           Toast.makeText(getContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
-           return;
+        final OrderFormValidator validator = new OrderFormValidator();
+
+        if (!validator.areFieldsValid(nameClient, nameProduct, quantityInput, totalInput)) {
+            Toast.makeText(getContext(), "Preencha todos os dados", Toast.LENGTH_SHORT).show();
         }
 
         orderViewModel.createOrder(new Order(nameClient, nameProduct, Integer.parseInt(quantityInput), Double.parseDouble(totalInput)));

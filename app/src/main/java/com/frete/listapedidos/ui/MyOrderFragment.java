@@ -2,6 +2,7 @@ package com.frete.listapedidos.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -21,14 +22,14 @@ public class MyOrderFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private OrderAdapter orderAdapter;
-    private OrderViewModel orderViewModel;
     private FragmentMyOrderBinding binding;
     private TextView txtNotifier;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         binding = FragmentMyOrderBinding.inflate(inflater, container, false);
 
         recyclerView = binding.recyclerViewOrders;
@@ -39,7 +40,7 @@ public class MyOrderFragment extends Fragment {
         orderAdapter = new OrderAdapter(null);
         recyclerView.setAdapter(orderAdapter);
 
-        orderViewModel = new ViewModelProvider(this).get(OrderViewModel.class);
+        OrderViewModel orderViewModel = new ViewModelProvider(this).get(OrderViewModel.class);
 
         orderViewModel.getOrdersLiveData().observe(getViewLifecycleOwner(), orders -> {
             if (orders != null && !orders.isEmpty()) {
@@ -61,5 +62,11 @@ public class MyOrderFragment extends Fragment {
         orderViewModel.fetchOrders();
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding.getRoot();
     }
 }

@@ -9,6 +9,7 @@ import com.frete.listapedidos.databinding.ListItemOrderBinding;
 import com.frete.listapedidos.model.Order;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
     private List<Order> orderList = new ArrayList<>();
@@ -47,7 +48,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         diffResult.dispatchUpdatesTo(this);
     }
 
-    static class OrderViewHolder extends RecyclerView.ViewHolder {
+    public static class OrderViewHolder extends RecyclerView.ViewHolder {
         private final ListItemOrderBinding binding;
 
         public OrderViewHolder(@NonNull ListItemOrderBinding binding) {
@@ -58,8 +59,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         public void bind(Order order) {
             binding.fieldNameClient.setText(order.getName());
             binding.fieldProduct.setText(order.getProduct());
-            binding.fieldQuantity.setText(String.format("Quantidade: %d", order.getQuantity()));
-            binding.fieldTotal.setText(String.format("Total: R$ %.2f", order.getTotal()));
+            binding.fieldQuantity.setText(String.format(Locale.getDefault(), "Quantidade: %d", order.getQuantity()));
+            binding.fieldTotal.setText(String.format(Locale.getDefault(),"Total: R$ %.2f", order.getTotal()));
         }
     }
 
@@ -86,7 +87,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
             String oldId = oldList.get(oldItemPosition).getId();
             String newId = newList.get(newItemPosition).getId();
-            return oldId != null && newId != null && oldId.equals(newId);
+            return oldId != null && oldId.equals(newId);
         }
 
         @Override
