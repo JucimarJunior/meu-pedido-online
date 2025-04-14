@@ -63,7 +63,7 @@ public class AddOrderFragment extends Fragment {
         final OrderFormValidator validator = new OrderFormValidator();
 
         if (!validator.areFieldsValid(nameClient, nameProduct, quantityInput, totalInput)) {
-            Toast.makeText(getContext(), "Preencha todos os dados", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
         }
 
         orderViewModel.createOrder(new Order(nameClient, nameProduct, Integer.parseInt(quantityInput), Double.parseDouble(totalInput)));
